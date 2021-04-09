@@ -1,16 +1,16 @@
-#  Project Title
+[Banner Montessori-Schule Aufkirchen COVID-19 Test Dashboard](.media/repository-open-graph.jpg)
 
-A README file, along with a repository license, contribution guidelines, and a code of conduct, helps you communicate expectations for and manage contributions to your project.
+Dieses Repository hostet eine Azure Static Web App, welche es Eltern ermöglicht zu erkennen, ob die gesetzlich vorgeschriebenen COVID-19 Selbsttest abgeschlossen sind.
+Eltern können so einfach erkennen, ob die Klassen Ihrer Kinder das Testen abgeschlossen haben. Das soll es Eltern mit langem Anfahrtsweg, ermöglichen Ihre Tag besser zu planen und sich auf Ihren Alltag besser konzentrieren zu könnne. 
 
-A README is often the first item a visitor will see when visiting your repository. README files typically include information on:
+#  Montessori-Schule Aufkirchen 
 
-- What the project does
-- Why the project is useful
-- How users can get started with the project
-- Where users can get help with your project
-- Who maintains and contributes to the project
-
-:exclamation: Please also have a look at the [license](LICENSE.md) and if the license fits the needs of your project. :exclamation: 
+Unsere Schule ist eine private staatlich genehmigte Volksschule in freier Trägerschaft des Montessori-Vereins Lkr. Erding e.V.  
+Solche Schulen „dienen der Aufgabe, das öffentliche Schulwesen zu vervollständigen und zu bereichern. Sie sind im Rahmen der Gesetze frei in der Entscheidung über eine besondere pädagogische Prägung, über Lehr- und Erziehungsmethoden, über Lehrstoff und Formen der Unterrichtsorganisation.“ (Art. 67 BayEUG).  
+Die Weiterentwicklung des pädagogischen Konzeptes bleibt eine ständige Aufgabe des Lehrerteams.  
+Den strukturellen und finanziellen Rahmen dafür ermöglicht der Verein. Er ist für die wirtschaftliche, sachliche und personelle Ausstattung der Schule verantwortlich.  
+Die staatliche Schulaufsicht übt die Regierung von Oberbayern aus. 
+Mit diesem besonderen pädagogischen Profil entspricht unsere Schule bezüglich der Bildungs- und Erziehungsziele denjenigen öffentlicher Schulen im Freistaat Bayern.
 
 ---
 

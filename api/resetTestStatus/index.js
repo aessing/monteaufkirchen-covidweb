@@ -23,7 +23,10 @@ module.exports = async function (context) {
 
   context.res = {
     status: responseStatus,
-    body: responseMessage,
+    body: `{ "statusMessage": "${responseMessage}" }`,
+    headers: {
+      "Content-Type": "application/json",
+    },
   };
 };
 

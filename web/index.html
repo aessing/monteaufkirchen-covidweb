@@ -1,7 +1,6 @@
 ﻿<!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
   <!-- BEGIN: Head-->
-
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -22,67 +21,42 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700"
       rel="stylesheet"
     />
-    <link rel="stylesheet" type="text/css" href="fonts/material-icons/material-icons.css" />
 
     <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="vendors/css/material-vendors.min.css" />
-    <link rel="stylesheet" type="text/css" href="vendors/css/weather-icons/climacons.min.css" />
-    <link rel="stylesheet" type="text/css" href="fonts/meteocons/style.css" />
-    <link rel="stylesheet" type="text/css" href="vendors/css/charts/morris.css" />
-    <link rel="stylesheet" type="text/css" href="vendors/css/charts/chartist.css" />
-    <link rel="stylesheet" type="text/css" href="vendors/css/charts/chartist-plugin-tooltip.css" />
+    <link rel="stylesheet" type="text/css" href="/css/material-vendors.min.css" />
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="css/material.css" />
-    <link rel="stylesheet" type="text/css" href="css/components.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-extended.css" />
-    <link rel="stylesheet" type="text/css" href="css/material-extended.css" />
-    <link rel="stylesheet" type="text/css" href="css/material-colors.css" />
+    <link rel="stylesheet" type="text/css" href="/css/material.css" />
+    <link rel="stylesheet" type="text/css" href="/css/components.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-extended.css" />
+    <link rel="stylesheet" type="text/css" href="/css/material-extended.css" />
+    <link rel="stylesheet" type="text/css" href="/css/material-colors.css" />
     <!-- END: Theme CSS-->
 
     <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="css/core/menu/menu-types/material-horizontal-menu.css" />
-    <link rel="stylesheet" type="text/css" href="fonts/simple-line-icons/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/core/colors/palette-gradient.css" />
-    <link rel="stylesheet" type="text/css" href="css/pages/timeline.css" />
-    <link rel="stylesheet" type="text/css" href="css/pages/dashboard-ecommerce.css" />
+    <link rel="stylesheet" type="text/css" href="/css/palette-gradient.css" />
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <!-- END: Custom CSS-->
   </head>
   <!-- END: Head-->
 
   <!-- BEGIN: Body-->
-
-  <body
-    class="horizontal-layout horizontal-menu horizontal-menu-padding material-horizontal-layout material-layout 2-columns"
-    data-open="click"
-    data-menu="horizontal-menu"
-    data-col="2-columns"
-  >
+  <body class="horizontal-layout material-horizontal-layout material-layout 1-column content-boxed-layout">
     <!-- BEGIN: Header-->
     <nav
-      class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow navbar-static-top navbar-light navbar-brand-center"
+      class="header-navbar navbar-expand-md navbar navbar-without-dd-arrow navbar-static-top navbar-light navbar-brand-center"
     >
       <div class="navbar-wrapper">
         <div class="navbar-header">
           <ul class="nav navbar-nav flex-row">
-            <li class="nav-item mobile-menu d-md-none mr-auto">
-              <a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a>
-            </li>
             <li class="nav-item">
               <a class="navbar-brand" href="index.html"
-                ><img class="brand-logo" alt="modern admin logo" src="images/logo/logo.png" />
-                <h3 class="brand-text">Modern</h3>
+                ><img style="height: 35px" alt="Montessori Erding Logi" src="images/logo.svg" />
               </a>
-            </li>
-            <li class="nav-item d-md-none">
-              <a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"
-                ><i class="la la-ellipsis-v"></i
-              ></a>
             </li>
           </ul>
         </div>
@@ -95,318 +69,15 @@
       <div class="content-header row"></div>
       <div class="content-overlay"></div>
       <div class="content-wrapper">
-        <div class="content-body">
-          <!-- eCommerce statistic -->
-          <div class="row">
-            <div class="col-xl-3 col-lg-6 col-12">
-              <div class="card pull-up">
-                <div class="card-content">
-                  <div class="card-body">
-                    <div class="media d-flex">
-                      <div class="media-body text-left">
-                        <h3 class="success">Tests abgeschlossen</h3>
-                      </div>
-                      <div>
-                        <p class="success font-large-2 float-right" style="font-style: italic">G1</p>
-                      </div>
-                    </div>
-                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                      <div
-                        class="progress-bar bg-gradient-x-success"
-                        role="progressbar"
-                        style="width: 100%"
-                        aria-valuenow="100"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-6 col-12">
-              <div class="card pull-up">
-                <div class="card-content">
-                  <div class="card-body">
-                    <div class="media d-flex">
-                      <div class="media-body text-left">
-                        <h3 class="warning">Tests laufen</h3>
-                      </div>
-                      <div>
-                        <p class="warning font-large-2 float-right" style="font-style: italic">G2</p>
-                      </div>
-                    </div>
-                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                      <div
-                        class="progress-bar bg-gradient-x-warning"
-                        role="progressbar"
-                        style="width: 50%"
-                        aria-valuenow="50"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-6 col-12">
-              <div class="card pull-up">
-                <div class="card-content">
-                  <div class="card-body">
-                    <div class="media d-flex">
-                      <div class="media-body text-left">
-                        <h3 class="danger">Test ausstehend</h3>
-                      </div>
-                      <div>
-                        <p class="danger font-large-2 float-right" style="font-style: italic">G3</p>
-                      </div>
-                    </div>
-                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                      <div
-                        class="progress-bar bg-gradient-x-danger"
-                        role="progressbar"
-                        style="width: 0%"
-                        aria-valuenow="0"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-6 col-12">
-              <div class="card pull-up">
-                <div class="card-content">
-                  <div class="card-body">
-                    <div class="media d-flex">
-                      <div class="media-body text-left">
-                        <h3 class="info">Heute kein Test</h3>
-                      </div>
-                      <div>
-                        <p class="info font-large-2 float-right" style="font-style: italic">G1</p>
-                      </div>
-                    </div>
-                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                      <div
-                        class="progress-bar bg-gradient-x-info"
-                        role="progressbar"
-                        style="width: 100%"
-                        aria-valuenow="100"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="content-header row">
+          <div class="content-header-left col-md-6 col-12 mb-1">
+            <h2 class="content-header-title">COVID-19 Test Dashboard</h2>
           </div>
-
-          <div class="row">
-            <div class="col-xl-3 col-lg-6 col-12">
-              <div class="card pull-up">
-                <div class="card-content">
-                  <div class="card-body">
-                    <div class="media d-flex">
-                      <div class="media-body text-left">
-                        <h3 class="success">Tests abgeschlossen</h3>
-                      </div>
-                      <div>
-                        <p class="success font-large-2 float-right" style="font-style: italic">M1</p>
-                      </div>
-                    </div>
-                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                      <div
-                        class="progress-bar bg-gradient-x-success"
-                        role="progressbar"
-                        style="width: 100%"
-                        aria-valuenow="100"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-6 col-12">
-              <div class="card pull-up">
-                <div class="card-content">
-                  <div class="card-body">
-                    <div class="media d-flex">
-                      <div class="media-body text-left">
-                        <h3 class="warning">Tests laufen</h3>
-                      </div>
-                      <div>
-                        <p class="warning font-large-2 float-right" style="font-style: italic">M2</p>
-                      </div>
-                    </div>
-                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                      <div
-                        class="progress-bar bg-gradient-x-warning"
-                        role="progressbar"
-                        style="width: 50%"
-                        aria-valuenow="50"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-6 col-12">
-              <div class="card pull-up">
-                <div class="card-content">
-                  <div class="card-body">
-                    <div class="media d-flex">
-                      <div class="media-body text-left">
-                        <h3 class="danger">Test ausstehend</h3>
-                      </div>
-                      <div>
-                        <p class="danger font-large-2 float-right" style="font-style: italic">M3</p>
-                      </div>
-                    </div>
-                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                      <div
-                        class="progress-bar bg-gradient-x-danger"
-                        role="progressbar"
-                        style="width: 0%"
-                        aria-valuenow="0"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-6 col-12">
-              <div class="card pull-up">
-                <div class="card-content">
-                  <div class="card-body">
-                    <div class="media d-flex">
-                      <div class="media-body text-left">
-                        <h3 class="info">Heute kein Test</h3>
-                      </div>
-                      <div>
-                        <p class="info font-large-2 float-right" style="font-style: italic">O1</p>
-                      </div>
-                    </div>
-                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                      <div
-                        class="progress-bar bg-gradient-x-info"
-                        role="progressbar"
-                        style="width: 100%"
-                        aria-valuenow="100"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-xl-3 col-lg-6 col-12">
-              <div class="card pull-up">
-                <div class="card-content">
-                  <div class="card-body">
-                    <div class="media d-flex">
-                      <div class="media-body text-left">
-                        <h3 class="success">Tests abgeschlossen</h3>
-                      </div>
-                      <div>
-                        <p class="success font-large-2 float-right" style="font-style: italic">O2</p>
-                      </div>
-                    </div>
-                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                      <div
-                        class="progress-bar bg-gradient-x-success"
-                        role="progressbar"
-                        style="width: 100%"
-                        aria-valuenow="100"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-6 col-12">
-              <div class="card pull-up">
-                <div class="card-content">
-                  <div class="card-body">
-                    <div class="media d-flex">
-                      <div class="media-body text-left">
-                        <h3 class="warning">Tests laufen</h3>
-                      </div>
-                      <div>
-                        <p class="warning font-large-2 float-right" style="font-style: italic">A1</p>
-                      </div>
-                    </div>
-                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                      <div
-                        class="progress-bar bg-gradient-x-warning"
-                        role="progressbar"
-                        style="width: 50%"
-                        aria-valuenow="50"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-6 col-12">
-              <div class="card pull-up">
-                <div class="card-content">
-                  <div class="card-body">
-                    <div class="media d-flex">
-                      <div class="media-body text-left">
-                        <h3 class="danger">Test ausstehend</h3>
-                      </div>
-                      <div>
-                        <p class="danger font-large-2 float-right" style="font-style: italic">A2</p>
-                      </div>
-                    </div>
-                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                      <div
-                        class="progress-bar bg-gradient-x-danger"
-                        role="progressbar"
-                        style="width: 0%"
-                        aria-valuenow="0"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--/ eCommerce statistic -->
         </div>
+        <div class="content-body"></div>
       </div>
     </div>
     <!-- END: Content-->
-
-    <div class="sidenav-overlay"></div>
-    <div class="drag-target"></div>
 
     <!-- BEGIN: Footer-->
     <footer class="footer footer-transparent footer-light navbar-shadow .fixed-bottom">
@@ -430,28 +101,9 @@
     </footer>
     <!-- END: Footer-->
 
-    <!-- BEGIN: Vendor JS-->
-    <script src="vendors/js/material-vendors.min.js"></script>
-    <!-- BEGIN Vendor JS-->
-
-    <!-- BEGIN: Page Vendor JS-->
-    <script src="vendors/js/ui/jquery.sticky.js"></script>
-    <script src="vendors/js/charts/chartist.min.js"></script>
-    <script src="vendors/js/charts/chartist-plugin-tooltip.min.js"></script>
-    <script src="vendors/js/charts/raphael-min.js"></script>
-    <script src="vendors/js/charts/morris.min.js"></script>
-    <script src="vendors/js/timeline/horizontal-timeline.js"></script>
-    <!-- END: Page Vendor JS-->
-
-    <!-- BEGIN: Theme JS-->
-    <script src="js/core/app-menu.js"></script>
-    <script src="js/core/app.js"></script>
-    <!-- END: Theme JS-->
-
-    <!-- BEGIN: Page JS-->
-    <script src="js/scripts/pages/material-app.js"></script>
-    <script src="js/scripts/pages/dashboard-ecommerce.js"></script>
-    <!-- END: Page JS-->
+    <!-- BEGIN: Custom JS-->
+    <script src="js/testresults.js"></script>
+    <!-- END: Custom JS-->
   </body>
   <!-- END: Body-->
 </html>

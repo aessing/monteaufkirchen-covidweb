@@ -1,0 +1,15 @@
+html body a {
+  color: #e32e21;
+}
+
+html body a:hover {
+  color: #222;
+}
+
+.brand-text {
+  color: #888;
+}
+
+.content-header-title {
+  border-right: none !important;
+}

@@ -1,25 +1,31 @@
 const tableStore = require(`azure-storage`);
 
-module.exports = async function (context) {
-  let classes = await getClasses();
-  let responseStatus = await resetTestStatus(classes);
+module.exports = async function (context, req) {
+  const authKey = req.query.authkey || (req.body && req.body.authkey);
+  let responseStatus;
+
+  if (process.env['RESET_AUTH_KEY'] === authKey) {
+    let classes = await getClasses();
+    responseStatus = await resetTestStatus(classes);
+  } else {
+    responseStatus = 401;
+  }
 
   let responseMessage;
-
-  console.log(responseStatus);
 
   switch (responseStatus) {
     case 200:
       responseMessage = `SUCCESS: Reset status of all classes`;
       break;
+    case 401:
+      responseMessage = `ERROR: AuthKey mismatch`;
+      break;
     case 500:
-      responseMessage = `ERROR: Couldn't update status of sll classes`;
+      responseMessage = `ERROR: Couldn't update status of all classes`;
       break;
     default:
       responseMessage = `UNDEFINED: Unknown error`;
   }
-
-  console.log(responseMessage);
 
   context.res = {
     status: responseStatus,

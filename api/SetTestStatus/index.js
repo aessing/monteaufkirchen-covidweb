@@ -20,7 +20,11 @@ module.exports = async function (context, req) {
 
   context.res = {
     status: responseStatus,
-    body: responseMessage,
+    body: `{ "statusMessage": "${responseMessage}" }`,
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Content-Type-Options': 'nosniff',
+    },
   };
 };
 
@@ -32,7 +36,7 @@ async function setTestStatus(testClass, testStatus) {
       _: testClass,
     },
     RowKey: {
-      _: "",
+      _: '',
     },
     Status: {
       _: testStatus,
@@ -40,16 +44,12 @@ async function setTestStatus(testClass, testStatus) {
   };
 
   return new Promise(function (resolve, reject) {
-    tableService.insertOrReplaceEntity(
-      process.env["STATUSTABLE_NAME"],
-      updatedStatus,
-      function (error) {
-        if (!error) {
-          resolve(200);
-        } else {
-          reject(500);
-        }
+    tableService.insertOrReplaceEntity(process.env['STATUSTABLE_NAME'], updatedStatus, function (error) {
+      if (!error) {
+        resolve(200);
+      } else {
+        reject(500);
       }
-    );
+    });
   });
 }

@@ -19,6 +19,22 @@
       "rewrite": "/.auth/login/aad"
     },
     {
+      "route": "/.auth/login/facebook",
+      "statusCode": "404"
+    },
+    {
+      "route": "/.auth/login/github",
+      "statusCode": "404"
+    },
+    {
+      "route": "/.auth/login/google",
+      "statusCode": "404"
+    },
+    {
+      "route": "/.auth/login/twitter",
+      "statusCode": "404"
+    },
+    {
       "route": "/logout",
       "redirect": "/.auth/logout"
     }

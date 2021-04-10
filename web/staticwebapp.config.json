@@ -10,6 +10,11 @@
       "allowedRoles": ["anonymous"]
     },
     {
+      "route": "/api/ResetTestStatus",
+      "methods": ["POST"],
+      "allowedRoles": ["anonymous"]
+    },
+    {
       "route": "/api/*",
       "methods": ["POST"],
       "allowedRoles": ["administrator"]

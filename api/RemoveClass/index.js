@@ -21,7 +21,8 @@ module.exports = async function (context, req) {
     status: responseStatus,
     body: `{ "statusMessage": "${responseMessage}" }`,
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
+      'X-Content-Type-Options': 'nosniff',
     },
   };
 };
@@ -34,21 +35,17 @@ async function removeClass(testClass) {
       _: testClass,
     },
     RowKey: {
-      _: "",
+      _: '',
     },
   };
 
   return new Promise(function (resolve, reject) {
-    tableService.deleteEntity(
-      process.env["STATUSTABLE_NAME"],
-      updatedStatus,
-      function (error) {
-        if (!error) {
-          resolve(200);
-        } else {
-          reject(500);
-        }
+    tableService.deleteEntity(process.env['STATUSTABLE_NAME'], updatedStatus, function (error) {
+      if (!error) {
+        resolve(200);
+      } else {
+        reject(500);
       }
-    );
+    });
   });
 }

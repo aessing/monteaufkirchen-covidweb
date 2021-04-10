@@ -25,7 +25,8 @@ module.exports = async function (context) {
     status: responseStatus,
     body: `{ "statusMessage": "${responseMessage}" }`,
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
+      'X-Content-Type-Options': 'nosniffs',
     },
   };
 };
@@ -35,23 +36,18 @@ async function getClasses() {
   const statusQuery = new tableStore.TableQuery().select(`PartitionKey`);
 
   return new Promise(function (resolve) {
-    tableService.queryEntities(
-      process.env["STATUSTABLE_NAME"],
-      statusQuery,
-      null,
-      function (error, result) {
-        if (!error) {
-          let entities = result.entries;
-          let resultSet = new Array();
+    tableService.queryEntities(process.env['STATUSTABLE_NAME'], statusQuery, null, function (error, result) {
+      if (!error) {
+        let entities = result.entries;
+        let resultSet = new Array();
 
-          entities.forEach(function (entity) {
-            resultSet.push(entity.PartitionKey._);
-          });
+        entities.forEach(function (entity) {
+          resultSet.push(entity.PartitionKey._);
+        });
 
-          resolve(resultSet);
-        }
+        resolve(resultSet);
       }
-    );
+    });
   });
 }
 
@@ -65,24 +61,20 @@ async function resetTestStatus(classList) {
           _: entity,
         },
         RowKey: {
-          _: "",
+          _: '',
         },
         Status: {
           _: 0,
         },
       };
 
-      tableService.replaceEntity(
-        process.env["STATUSTABLE_NAME"],
-        updatedStatus,
-        function (error) {
-          if (!error) {
-            resolve(200);
-          } else {
-            reject(500);
-          }
+      tableService.replaceEntity(process.env['STATUSTABLE_NAME'], updatedStatus, function (error) {
+        if (!error) {
+          resolve(200);
+        } else {
+          reject(500);
         }
-      );
+      });
     });
   });
 }

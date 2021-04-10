@@ -13,3 +13,7 @@ html body a:hover {
 .content-header-title {
   border-right: none !important;
 }
+
+.form-control:focus {
+  border-color: #e32e21;
+}

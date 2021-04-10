@@ -68,10 +68,11 @@
                             ></div>
                           </div>
                           <div class="pt-2">
-                            <button type="button" onclick="setClassStatus('${entity.class}', 3)" class="btn btn-info btn-min-width mr-1 mb-1 waves-effect waves-light">Heute kein Test</button>
-                            <button type="button" onclick="setClassStatus('${entity.class}', 0)" class="btn btn-danger btn-min-width mr-1 mb-1 waves-effect waves-light">Test ausstehend</button>
-                            <button type="button" onclick="setClassStatus('${entity.class}', 1)" class="btn btn-warning btn-min-width mr-1 mb-1 waves-effect waves-light">Es wird getestet</button>
-                            <button type="button" onclick="setClassStatus('${entity.class}', 2)" class="btn btn-success btn-min-width mr-1 mb-1 waves-effect waves-light">Test abgeschlossen</button>
+                            <button type="button" onclick="setClassStatus('${entity.class}', 3)" class="btn btn-info btn-min-width mr-1 mb-1 waves-effect waves-light btn-block">Heute kein Test</button>
+                            <button type="button" onclick="setClassStatus('${entity.class}', 0)" class="btn btn-danger btn-min-width mr-1 mb-1 waves-effect waves-light btn-block">Test ausstehend</button>
+                            <button type="button" onclick="setClassStatus('${entity.class}', 1)" class="btn btn-warning btn-min-width mr-1 mb-1 waves-effect waves-light btn-block">Es wird getestet</button>
+                            <button type="button" onclick="setClassStatus('${entity.class}', 2)" class="btn btn-success btn-min-width mr-1 mb-1 waves-effect waves-light btn-block">Test abgeschlossen</button>
+                            <button type="button" onclick="deleteClass('${entity.class}')" class="btn btn-dark btn-min-width mr-1 mb-1 waves-effect waves-light btn-block">Klasse löschen</button>
                           </div>
                         </div>
                       </div>
@@ -90,6 +91,33 @@
         html += `</div>
       `;
       }
+
+      html += `<div class="row">
+                  <div class="col-xl-3 col-lg-6 col-12">
+                    <div class="card pull-up">
+                      <div class="card-content">
+                        <div class="card-body">
+                          <div class="media d-flex">
+                            <div class="media-body text-left">
+                              <h3>Neue Klasse hinzufügen</h3>
+                            </div>
+                          </div>
+                          <form>
+                          <div class="pt-2">
+                            <fieldset class="form-group position-relative">
+                              <input type="text" class="form-control input-xl" id="xLarge" name="className" placeholder="Klassenkürzel">
+                            </fieldset>
+                          </div>
+                          <div class="pt-2">
+                            <button type="button" onclick="setClassStatus(this.form.className.value, 0)" class="btn btn-dark btn-min-width mr-1 mb-1 waves-effect waves-light btn-block">Klasse hinzufügen</button>
+                          </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  `;
     } else {
       html = error;
     }
@@ -108,6 +136,21 @@ function setClassStatus(className, classStatus) {
     body: JSON.stringify(params),
   };
   fetch('/api/SetTestStatus', options)
+    .then((response) => response.json())
+    .then((response) => {
+      getClasses();
+    });
+}
+
+function deleteClass(className) {
+  const params = {
+    class: className,
+  };
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(params),
+  };
+  fetch('/api/RemoveClass', options)
     .then((response) => response.json())
     .then((response) => {
       getClasses();

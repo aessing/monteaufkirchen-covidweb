@@ -17,3 +17,11 @@ html body a:hover {
 .form-control:focus {
   border-color: #e32e21;
 }
+
+.loader-primary div {
+  background-color: #e32e21 !important;
+}
+
+.loader-container {
+  text-align: center;
+}

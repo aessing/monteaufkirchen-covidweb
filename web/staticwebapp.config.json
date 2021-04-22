@@ -43,5 +43,11 @@
       "route": "/logout",
       "redirect": "/.auth/logout"
     }
+  ],
+  "platformErrorOverrides": [
+    {
+      "errorType": "Unauthenticated",
+      "serve": "/login"
+    }
   ]
 }

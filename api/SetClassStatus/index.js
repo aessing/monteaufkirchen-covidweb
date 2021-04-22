@@ -44,12 +44,16 @@ async function setTestStatus(testClass, testStatus) {
   };
 
   return new Promise(function (resolve, reject) {
-    tableService.insertOrReplaceEntity(process.env['STATUSTABLE_NAME'], updatedStatus, function (error) {
-      if (!error) {
-        resolve(200);
-      } else {
-        reject(500);
+    tableService.insertOrReplaceEntity(
+      process.env['STATUSTABLE_NAME'],
+      updatedStatus,
+      function (error) {
+        if (!error) {
+          resolve(200);
+        } else {
+          reject(500);
+        }
       }
-    });
+    );
   });
 }

@@ -5,7 +5,7 @@
   let rowCount = 0;
 
   const request = new XMLHttpRequest();
-  request.open('POST', '/api/GetTestStatus', true);
+  request.open('POST', '/api/GetClasses', true);
   request.send();
 
   request.addEventListener('load', function () {
@@ -135,7 +135,7 @@ function setClassStatus(className, classStatus) {
     method: 'POST',
     body: JSON.stringify(params),
   };
-  fetch('/api/SetTestStatus', options)
+  fetch('/api/SetClassStatus', options)
     .then((response) => response.json())
     .then((response) => {
       getClasses();

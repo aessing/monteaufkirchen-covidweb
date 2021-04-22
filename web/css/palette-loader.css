@@ -48,7 +48,12 @@
 }
 
 .loader-white.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #ffffff 30%, #ffffff 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #ffffff 30%,
+    #ffffff 100%
+  );
   background-color: transparent !important;
 }
 
@@ -116,7 +121,12 @@
 }
 
 .loader-black.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #000000 30%, #000000 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #000000 30%,
+    #000000 100%
+  );
   background-color: transparent !important;
 }
 
@@ -184,7 +194,12 @@
 }
 
 .loader-primary.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #666ee8 30%, #666ee8 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #666ee8 30%,
+    #666ee8 100%
+  );
   background-color: transparent !important;
 }
 
@@ -252,7 +267,12 @@
 }
 
 .loader-secondary.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #6b6f82 30%, #6b6f82 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #6b6f82 30%,
+    #6b6f82 100%
+  );
   background-color: transparent !important;
 }
 
@@ -320,7 +340,12 @@
 }
 
 .loader-success.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #28d094 30%, #28d094 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #28d094 30%,
+    #28d094 100%
+  );
   background-color: transparent !important;
 }
 
@@ -388,7 +413,12 @@
 }
 
 .loader-info.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #1e9ff2 30%, #1e9ff2 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #1e9ff2 30%,
+    #1e9ff2 100%
+  );
   background-color: transparent !important;
 }
 
@@ -456,7 +486,12 @@
 }
 
 .loader-warning.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #ff9149 30%, #ff9149 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #ff9149 30%,
+    #ff9149 100%
+  );
   background-color: transparent !important;
 }
 
@@ -524,7 +559,12 @@
 }
 
 .loader-danger.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #ff4961 30%, #ff4961 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #ff4961 30%,
+    #ff4961 100%
+  );
   background-color: transparent !important;
 }
 
@@ -592,7 +632,12 @@
 }
 
 .loader-light.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #e0e0e0 30%, #e0e0e0 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #e0e0e0 30%,
+    #e0e0e0 100%
+  );
   background-color: transparent !important;
 }
 
@@ -660,7 +705,12 @@
 }
 
 .loader-dark.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #424242 30%, #424242 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #424242 30%,
+    #424242 100%
+  );
   background-color: transparent !important;
 }
 
@@ -728,7 +778,12 @@
 }
 
 .loader-red.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #f44336 30%, #f44336 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #f44336 30%,
+    #f44336 100%
+  );
   background-color: transparent !important;
 }
 
@@ -796,7 +851,12 @@
 }
 
 .loader-pink.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #e91e63 30%, #e91e63 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #e91e63 30%,
+    #e91e63 100%
+  );
   background-color: transparent !important;
 }
 
@@ -864,7 +924,12 @@
 }
 
 .loader-purple.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #9c27b0 30%, #9c27b0 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #9c27b0 30%,
+    #9c27b0 100%
+  );
   background-color: transparent !important;
 }
 
@@ -932,7 +997,12 @@
 }
 
 .loader-blue.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #2196f3 30%, #2196f3 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #2196f3 30%,
+    #2196f3 100%
+  );
   background-color: transparent !important;
 }
 
@@ -1000,7 +1070,12 @@
 }
 
 .loader-cyan.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #00bcd4 30%, #00bcd4 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #00bcd4 30%,
+    #00bcd4 100%
+  );
   background-color: transparent !important;
 }
 
@@ -1068,7 +1143,12 @@
 }
 
 .loader-teal.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #009688 30%, #009688 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #009688 30%,
+    #009688 100%
+  );
   background-color: transparent !important;
 }
 
@@ -1136,7 +1216,12 @@
 }
 
 .loader-yellow.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #ffeb3b 30%, #ffeb3b 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #ffeb3b 30%,
+    #ffeb3b 100%
+  );
   background-color: transparent !important;
 }
 
@@ -1204,7 +1289,12 @@
 }
 
 .loader-amber.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #ffc107 30%, #ffc107 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #ffc107 30%,
+    #ffc107 100%
+  );
   background-color: transparent !important;
 }
 
@@ -1272,7 +1362,12 @@
 }
 
 .loader-blue-grey.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #607d8b 30%, #607d8b 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #607d8b 30%,
+    #607d8b 100%
+  );
   background-color: transparent !important;
 }
 
@@ -1340,7 +1435,12 @@
 }
 
 .loader-grey-blue.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #1b2942 30%, #1b2942 100%);
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 70%,
+    #1b2942 30%,
+    #1b2942 100%
+  );
   background-color: transparent !important;
 }
 

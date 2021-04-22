@@ -5,7 +5,7 @@
   let rowCount = 0;
 
   const request = new XMLHttpRequest();
-  request.open('POST', '/api/GetTestStatus', true);
+  request.open('POST', '/api/GetClasses', true);
   request.send();
 
   request.addEventListener('load', function () {

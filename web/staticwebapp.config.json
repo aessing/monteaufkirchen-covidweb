@@ -5,12 +5,12 @@
       "allowedRoles": ["administrator"]
     },
     {
-      "route": "/api/GetTestStatus",
+      "route": "/api/GetClasses",
       "methods": ["POST"],
       "allowedRoles": ["anonymous"]
     },
     {
-      "route": "/api/ResetTestStatus",
+      "route": "/api/ResetClasses",
       "methods": ["POST"],
       "allowedRoles": ["anonymous"]
     },

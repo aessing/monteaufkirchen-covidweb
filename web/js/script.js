@@ -3,6 +3,7 @@ async function getUserInfo() {
   const response = await fetch('/.auth/me');
   const payload = await response.json();
   const { clientPrincipal } = payload;
+  console.log(clientPrincipal);
   return clientPrincipal;
 }
 
@@ -13,7 +14,6 @@ function getClasses() {
   let rowCount = 0;
 
   const userInfo = getUserInfo();
-  console.log(userInfo, 'Test');
 
   const request = new XMLHttpRequest();
   request.open('POST', '/api/GetClasses', true);

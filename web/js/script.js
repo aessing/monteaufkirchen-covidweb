@@ -1,11 +1,19 @@
-﻿function getClasses() {
+﻿// Function definition
+async function getUserInfo() {
+  const response = await fetch('/.auth/me');
+  const payload = await response.json();
+  const { clientPrincipal } = payload;
+  return clientPrincipal;
+}
+
+function getClasses() {
   const contentBody = document.querySelector('.content-body');
 
   let html = '';
   let rowCount = 0;
 
   let userInfo = getUserInfo();
-  console.log(userInfo);
+  userInfo = null;
 
   const request = new XMLHttpRequest();
   request.open('POST', '/api/GetClasses', true);
@@ -134,13 +142,6 @@
   });
 }
 
-async function getUserInfo() {
-  const response = await fetch('/.auth/me');
-  const payload = await response.json();
-  const { clientPrincipal } = payload;
-  return clientPrincipal;
-}
-
 function setClassStatus(className, classStatus) {
   const params = {
     class: className,
@@ -172,9 +173,28 @@ function deleteClass(className) {
     });
 }
 
+function getLoginButton() {
+  const loginButton = document.querySelector('#login-button');
+
+  let userInfo = getUserInfo();
+  userInfo = null;
+
+  const buttonText = userInfo ? 'Logout' : 'Login';
+  const buttonURL = userInfo
+    ? '/.auth/logout?post_logout_redirect_uri=/'
+    : '/.auth/login/aad?post_login_redirect_uri=/';
+
+  const html = `<a class="btn btn-secondary btn-min-width waves-effect waves-light m-1" href="${buttonURL}">${buttonText}</a>`;
+
+  loginButton.innerHTML = html;
+}
+
 function showClasses() {
   getClasses();
 }
+
+// Main Code
+getLoginButton();
 
 setInterval(function () {
   showClasses();

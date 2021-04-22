@@ -176,6 +176,7 @@ function getLoginButton() {
   const loginButton = document.querySelector('#login-button');
 
   const userInfo = getUserInfo();
+  console.log(userInfo.userDetails);
 
   const buttonText = userInfo ? 'Logout' : 'Login';
   const buttonURL = userInfo
@@ -193,8 +194,6 @@ function showClasses() {
 
 // Main Code
 getLoginButton();
-
-console.log(getUserInfo());
 
 setInterval(function () {
   showClasses();

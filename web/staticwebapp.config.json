@@ -1,10 +1,6 @@
 ﻿{
   "routes": [
     {
-      "route": "/admin/*",
-      "allowedRoles": ["administrator"]
-    },
-    {
       "route": "/api/GetClasses",
       "methods": ["POST"],
       "allowedRoles": ["anonymous"]

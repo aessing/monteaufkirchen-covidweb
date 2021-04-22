@@ -176,6 +176,7 @@ function getLoginButton() {
   const loginButton = document.querySelector('#login-button');
 
   const userInfo = getUserInfo();
+  console.log(userInfo);
   console.log(userInfo.userDetails);
 
   const buttonText = userInfo ? 'Logout' : 'Login';

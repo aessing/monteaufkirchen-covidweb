@@ -13,7 +13,7 @@ function getClasses() {
   let rowCount = 0;
 
   const userInfo = getUserInfo();
-  console.log(userInfo);
+  console.log(userInfo, 'Test');
 
   const request = new XMLHttpRequest();
   request.open('POST', '/api/GetClasses', true);

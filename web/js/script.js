@@ -1,5 +1,5 @@
 ﻿// Function definition
-async function getUserInfo() {
+function getUserInfo() {
   const response = await fetch('/.auth/me');
   const payload = await response.json();
   const { clientPrincipal } = payload;
@@ -12,7 +12,7 @@ function getClasses() {
   let html = '';
   let rowCount = 0;
 
-  const userInfo = (async () => getUserInfo())();
+  const userInfo = getUserInfo();
 
   const request = new XMLHttpRequest();
   request.open('POST', '/api/GetClasses', true);
@@ -175,7 +175,7 @@ function deleteClass(className) {
 function getLoginButton() {
   const loginButton = document.querySelector('#login-button');
 
-  const userInfo = (async () => getUserInfo())();
+  const userInfo = getUserInfo();
   console.log(userInfo);
   console.log(userInfo.userDetails);
 

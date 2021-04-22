@@ -3,7 +3,6 @@ async function getUserInfo() {
   const response = await fetch('/.auth/me');
   const payload = await response.json();
   const { clientPrincipal } = payload;
-  console.log(clientPrincipal);
   return clientPrincipal;
 }
 
@@ -194,6 +193,8 @@ function showClasses() {
 
 // Main Code
 getLoginButton();
+
+console.log(getUserInfo());
 
 setInterval(function () {
   showClasses();

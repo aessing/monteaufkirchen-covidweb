@@ -12,7 +12,7 @@ function getClasses() {
   let html = '';
   let rowCount = 0;
 
-  const userInfo = getUserInfo();
+  const userInfo = await getUserInfo();
 
   const request = new XMLHttpRequest();
   request.open('POST', '/api/GetClasses', true);
@@ -175,8 +175,8 @@ function deleteClass(className) {
 function getLoginButton() {
   const loginButton = document.querySelector('#login-button');
 
-  const userInfo = getUserInfo();
-  console.log(userInfo);
+  const userInfo = await getUserInfo();
+  console.log(userInfo); 
   console.log(userInfo.userDetails);
 
   const buttonText = userInfo ? 'Logout' : 'Login';

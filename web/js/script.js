@@ -176,7 +176,6 @@ async function getLoginButton() {
   const loginButton = document.querySelector('#login-button');
 
   const userInfo = await getUserInfo();
-  console.log(userInfo);
 
   const buttonText = userInfo ? 'Logout' : 'Login';
   const buttonURL = userInfo

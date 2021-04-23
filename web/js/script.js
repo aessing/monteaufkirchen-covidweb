@@ -1,18 +1,18 @@
 ﻿// Function definition
-function getUserInfo() {
+async function getUserInfo() {
   const response = await fetch('/.auth/me');
   const payload = await response.json();
   const { clientPrincipal } = payload;
   return clientPrincipal;
 }
 
-function getClasses() {
+async function getClasses() {
   const contentBody = document.querySelector('.content-body');
 
   let html = '';
   let rowCount = 0;
 
-  const userInfo = getUserInfo();
+  const userInfo = await getUserInfo();
 
   const request = new XMLHttpRequest();
   request.open('POST', '/api/GetClasses', true);
@@ -141,7 +141,7 @@ function getClasses() {
   });
 }
 
-function setClassStatus(className, classStatus) {
+async function setClassStatus(className, classStatus) {
   const params = {
     class: className,
     status: classStatus,
@@ -157,7 +157,7 @@ function setClassStatus(className, classStatus) {
     });
 }
 
-function deleteClass(className) {
+async function deleteClass(className) {
   const params = {
     class: className,
   };
@@ -172,12 +172,11 @@ function deleteClass(className) {
     });
 }
 
-function getLoginButton() {
+async function getLoginButton() {
   const loginButton = document.querySelector('#login-button');
 
-  const userInfo = getUserInfo();
+  const userInfo = await getUserInfo();
   console.log(userInfo);
-  console.log(userInfo.userDetails);
 
   const buttonText = userInfo ? 'Logout' : 'Login';
   const buttonURL = userInfo
@@ -189,8 +188,8 @@ function getLoginButton() {
   loginButton.innerHTML = html;
 }
 
-function showClasses() {
-  getClasses();
+async function showClasses() {
+  await getClasses();
 }
 
 // Main Code

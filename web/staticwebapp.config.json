@@ -13,7 +13,7 @@
     {
       "route": "/api/*",
       "methods": ["POST"],
-      "allowedRoles": ["administrator"]
+      "allowedRoles": ["authenticated"]
     },
     {
       "route": "/login",
@@ -40,6 +40,12 @@
       "redirect": "/.auth/logout"
     }
   ],
+  "responseOverrides": {
+    "401": {
+      "redirect": "/login",
+      "statusCode": 302
+    }
+  },
   "platformErrorOverrides": [
     {
       "errorType": "Unauthenticated",

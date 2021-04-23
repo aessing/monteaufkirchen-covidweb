@@ -40,12 +40,16 @@ async function removeClass(testClass) {
   };
 
   return new Promise(function (resolve, reject) {
-    tableService.deleteEntity(process.env['STATUSTABLE_NAME'], updatedStatus, function (error) {
-      if (!error) {
-        resolve(200);
-      } else {
-        reject(500);
+    tableService.deleteEntity(
+      process.env['STATUSTABLE_NAME'],
+      updatedStatus,
+      function (error) {
+        if (!error) {
+          resolve(200);
+        } else {
+          reject(500);
+        }
       }
-    });
+    );
   });
 }

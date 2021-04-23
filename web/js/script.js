@@ -1,11 +1,21 @@
-﻿function getClasses() {
+﻿// Function definition
+async function getUserInfo() {
+  const response = await fetch('/.auth/me');
+  const payload = await response.json();
+  const { clientPrincipal } = payload;
+  return clientPrincipal;
+}
+
+async function getClasses() {
   const contentBody = document.querySelector('.content-body');
 
   let html = '';
   let rowCount = 0;
 
+  const userInfo = await getUserInfo();
+
   const request = new XMLHttpRequest();
-  request.open('POST', '/api/GetTestStatus', true);
+  request.open('POST', '/api/GetClasses', true);
   request.send();
 
   request.addEventListener('load', function () {
@@ -66,12 +76,22 @@
                               aria-valuemin="0"
                               aria-valuemax="100"
                             ></div>
-                          </div>
-                        </div>
+                          </div>`;
+
+        if (userInfo) {
+          html += `         <div class="pt-2">
+                            <button type="button" onclick="setClassStatus('${entity.class}', 3)" class="btn btn-info btn-min-width mr-1 mb-1 waves-effect waves-light btn-block">Heute kein Test</button>
+                            <button type="button" onclick="setClassStatus('${entity.class}', 0)" class="btn btn-danger btn-min-width mr-1 mb-1 waves-effect waves-light btn-block">Test ausstehend</button>
+                            <button type="button" onclick="setClassStatus('${entity.class}', 1)" class="btn btn-warning btn-min-width mr-1 mb-1 waves-effect waves-light btn-block">Es wird getestet</button>
+                            <button type="button" onclick="setClassStatus('${entity.class}', 2)" class="btn btn-success btn-min-width mr-1 mb-1 waves-effect waves-light btn-block">Test abgeschlossen</button>
+                            <button type="button" onclick="deleteClass('${entity.class}')" class="btn btn-dark btn-min-width mr-1 mb-1 waves-effect waves-light btn-block">Klasse löschen</button>
+                          </div>`;
+        }
+
+        html += `       </div>
                       </div>
                     </div>
-                  </div>
-                  `;
+                  </div>`;
 
         if (rowCount === 3) {
           html += `</div>
@@ -84,19 +104,104 @@
         html += `</div>
       `;
       }
+
+      if (userInfo) {
+        html += `<div class="row">
+                  <div class="col-xl-3 col-lg-6 col-12">
+                    <div class="card pull-up">
+                      <div class="card-content">
+                        <div class="card-body">
+                          <div class="media d-flex">
+                            <div class="media-body text-left">
+                              <h3>Neue Klasse hinzufügen</h3>
+                            </div>
+                          </div>
+                          <form>
+                          <div class="pt-2">
+                            <fieldset class="form-group position-relative">
+                              <input type="text" class="form-control input-xl" id="xLarge" name="className" placeholder="Klassenkürzel">
+                            </fieldset>
+                          </div>
+                          <div class="pt-2">
+                            <button type="button" onclick="setClassStatus(this.form.className.value, 0)" class="btn btn-dark btn-min-width mr-1 mb-1 waves-effect waves-light btn-block">Klasse hinzufügen</button>
+                          </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  `;
+      }
     } else {
       html = error;
     }
-
     //contentBody.insertAdjacentHTML('beforeend', html);
     contentBody.innerHTML = html;
   });
 }
 
-function showClasses() {
-  getClasses();
+async function setClassStatus(className, classStatus) {
+  const params = {
+    class: className,
+    status: classStatus,
+  };
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(params),
+  };
+  fetch('/api/SetClassStatus', options)
+    .then((response) => response.json())
+    .then((response) => {
+      getClasses();
+    });
 }
 
-setInterval(function () {
-  showClasses();
-}, 120 * 1000);
+function deleteClass(className) {
+  Swal.fire({
+    title: 'Bist Du sicher?',
+    text: `Willst Du die Klasse ${className} wirklich löschen?`,
+    type: 'error',
+    showCancelButton: true,
+    confirmButtonText: 'Ja, lösche die Klasse!',
+    confirmButtonClass: 'btn btn-danger',
+    cancelButtonClass: 'btn btn-dark ml-1',
+    buttonsStyling: false,
+  }).then(function (result) {
+    if (result.value) {
+      const params = {
+        class: className,
+      };
+      const options = {
+        method: 'POST',
+        body: JSON.stringify(params),
+      };
+      fetch('/api/RemoveClass', options)
+        .then((response) => response.json())
+        .then((response) => {
+          getClasses();
+        });
+    }
+  });
+}
+
+async function getLoginButton() {
+  const loginButton = document.querySelector('#login-button');
+
+  const userInfo = await getUserInfo();
+
+  const buttonText = userInfo ? 'Logout' : 'Login';
+  const buttonURL = userInfo
+    ? '/.auth/logout?post_logout_redirect_uri=/'
+    : '/.auth/login/aad?post_login_redirect_uri=/';
+
+  const html = `<a class="btn btn-secondary btn-min-width waves-effect waves-light m-1" href="${buttonURL}">${buttonText}</a>`;
+
+  loginButton.innerHTML = html;
+}
+
+async function showClasses() {
+  await getClasses();
+}
+
+// Main Cod

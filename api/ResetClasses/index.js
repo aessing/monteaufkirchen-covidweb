@@ -1,12 +1,16 @@
 const tableStore = require(`azure-storage`);
 
 module.exports = async function (context, req) {
-  const authKey = req.query.authkey || (req.body && req.body.authkey);
+  const paramAuthKey = req.query.authkey || (req.body && req.body.authkey);
+  const paramClassStatus = req.query.status || (req.body && req.body.status);
+
+  let classStatus = Number(paramClassStatus) === 3 ? paramClassStatus : 0;
+
   let responseStatus;
 
-  if (process.env['RESET_AUTH_KEY'] === authKey) {
+  if (process.env['RESET_AUTH_KEY'] === paramAuthKey) {
     let classes = await getClasses();
-    responseStatus = await resetTestStatus(classes);
+    responseStatus = await resetTestStatus(classes, classStatus);
   } else {
     responseStatus = 401;
   }
@@ -42,22 +46,27 @@ async function getClasses() {
   const statusQuery = new tableStore.TableQuery().select(`PartitionKey`);
 
   return new Promise(function (resolve) {
-    tableService.queryEntities(process.env['STATUSTABLE_NAME'], statusQuery, null, function (error, result) {
-      if (!error) {
-        let entities = result.entries;
-        let resultSet = new Array();
+    tableService.queryEntities(
+      process.env['STATUSTABLE_NAME'],
+      statusQuery,
+      null,
+      function (error, result) {
+        if (!error) {
+          let entities = result.entries;
+          let resultSet = new Array();
 
-        entities.forEach(function (entity) {
-          resultSet.push(entity.PartitionKey._);
-        });
+          entities.forEach(function (entity) {
+            resultSet.push(entity.PartitionKey._);
+          });
 
-        resolve(resultSet);
+          resolve(resultSet);
+        }
       }
-    });
+    );
   });
 }
 
-async function resetTestStatus(classList) {
+async function resetTestStatus(classList, classStatus) {
   const tableService = tableStore.createTableService();
 
   return new Promise(function (resolve, reject) {
@@ -70,17 +79,23 @@ async function resetTestStatus(classList) {
           _: '',
         },
         Status: {
-          _: 0,
+          _: Number(classStatus),
         },
       };
 
-      tableService.replaceEntity(process.env['STATUSTABLE_NAME'], updatedStatus, function (error) {
-        if (!error) {
-          resolve(200);
-        } else {
-          reject(500);
+      console.log(updatedStatus);
+
+      tableService.replaceEntity(
+        process.env['STATUSTABLE_NAME'],
+        updatedStatus,
+        function (error) {
+          if (!error) {
+            resolve(200);
+          } else {
+            reject(500);
+          }
         }
-      });
+      );
     });
   });
 }

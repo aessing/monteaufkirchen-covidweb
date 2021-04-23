@@ -1,23 +1,19 @@
 ﻿{
   "routes": [
     {
-      "route": "/admin/*",
-      "allowedRoles": ["administrator"]
-    },
-    {
-      "route": "/api/GetTestStatus",
+      "route": "/api/GetClasses",
       "methods": ["POST"],
       "allowedRoles": ["anonymous"]
     },
     {
-      "route": "/api/ResetTestStatus",
+      "route": "/api/ResetClasses",
       "methods": ["POST"],
       "allowedRoles": ["anonymous"]
     },
     {
       "route": "/api/*",
       "methods": ["POST"],
-      "allowedRoles": ["administrator"]
+      "allowedRoles": ["authenticated"]
     },
     {
       "route": "/login",
@@ -42,6 +38,18 @@
     {
       "route": "/logout",
       "redirect": "/.auth/logout"
+    }
+  ],
+  "responseOverrides": {
+    "401": {
+      "redirect": "/login",
+      "statusCode": 302
+    }
+  },
+  "platformErrorOverrides": [
+    {
+      "errorType": "Unauthenticated",
+      "serve": "/login"
     }
   ]
 }

@@ -3,7 +3,9 @@
     "ms-azuretools.vscode-azurefunctions",
     "ms-azuretools.vscode-azurestaticwebapps",
     "ms-azuretools.vscode-azurestorage",
-    "ritwickdey.liveserver",
-    "esbenp.prettier-vscode"
+    "ms-azuretools.vscode-logicapps",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "ritwickdey.liveserver"
   ]
 }

@@ -89,6 +89,8 @@
     <link rel="stylesheet" type="text/css" href="/css/loaders.min.css" />
     <link rel="stylesheet" type="text/css" href="/css/palette-loader.css" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/sweetalert2.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
   </head>
 
   <body
@@ -179,9 +181,15 @@
 
     <!-- Javascript
 	  ============================================= -->
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/polyfill.min.js"></script>
     <script src="js/script.js"></script>
     <script>
+      getLoginButton();
       showClasses();
+      setInterval(function () {
+        showClasses();
+      }, 120 * 1000);
     </script>
   </body>
 </html>

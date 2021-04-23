@@ -157,19 +157,32 @@ async function setClassStatus(className, classStatus) {
     });
 }
 
-async function deleteClass(className) {
-  const params = {
-    class: className,
-  };
-  const options = {
-    method: 'POST',
-    body: JSON.stringify(params),
-  };
-  fetch('/api/RemoveClass', options)
-    .then((response) => response.json())
-    .then((response) => {
-      getClasses();
-    });
+function deleteClass(className) {
+  Swal.fire({
+    title: 'Bist Du sicher?',
+    text: `Willst Du die Klasse ${className} wirklich löschen?`,
+    type: 'error',
+    showCancelButton: true,
+    confirmButtonText: 'Ja, lösche die Klasse!',
+    confirmButtonClass: 'btn btn-danger',
+    cancelButtonClass: 'btn btn-dark ml-1',
+    buttonsStyling: false,
+  }).then(function (result) {
+    if (result.value) {
+      const params = {
+        class: className,
+      };
+      const options = {
+        method: 'POST',
+        body: JSON.stringify(params),
+      };
+      fetch('/api/RemoveClass', options)
+        .then((response) => response.json())
+        .then((response) => {
+          getClasses();
+        });
+    }
+  });
 }
 
 async function getLoginButton() {
@@ -191,9 +204,4 @@ async function showClasses() {
   await getClasses();
 }
 
-// Main Code
-getLoginButton();
-
-setInterval(function () {
-  showClasses();
-}, 120 * 1000);
+// Main Cod

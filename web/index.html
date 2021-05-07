@@ -91,6 +91,20 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/sweetalert2.min.css" />
     <link rel="stylesheet" type="text/css" href="css/animate.css" />
+
+    <!-- AppInsights
+	  ============================================= -->
+    <script>
+      import { ApplicationInsights } from '@microsoft/applicationinsights-web';
+      const appInsights = new ApplicationInsights({
+        config: {
+          instrumentationKey: process.env['APPINSIGHTS_INSTRUMENTATIONKEY'],
+          enableAutoRouteTracking: true,
+        },
+      });
+      appInsights.loadAppInsights();
+      appInsights.trackPageView();
+    </script>
   </head>
 
   <body

@@ -204,5 +204,3 @@ async function getLoginButton() {
 async function showClasses() {
   await getClasses();
 }
-
-// Main Cod

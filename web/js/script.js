@@ -162,8 +162,10 @@ function deleteClass(className) {
     title: 'Bist Du sicher?',
     text: `Willst Du die Klasse ${className} wirklich löschen?`,
     type: 'error',
-    showCancelButton: true,
+    showCancelButton: false,
+    showDenyButton: true,
     confirmButtonText: 'Ja, lösche die Klasse!',
+    denyButtonText: 'Abbrechen',
     confirmButtonClass: 'btn btn-danger',
     cancelButtonClass: 'btn btn-dark ml-1',
     buttonsStyling: false,
@@ -190,7 +192,7 @@ async function getLoginButton() {
 
   const userInfo = await getUserInfo();
 
-  const buttonText = userInfo ? 'Logout' : 'Login';
+  const buttonText = userInfo ? 'Abmelden' : 'Anmelden';
   const buttonURL = userInfo
     ? '/.auth/logout?post_logout_redirect_uri=/'
     : '/.auth/login/aad?post_login_redirect_uri=/';

@@ -1,6 +1,6 @@
 ![Banner Montessori-Schule Aufkirchen COVID-19 Test Dashboard](.media/repository-open-graph.jpg)
 
-Dieses Repository hostet eine Azure Static Web App, welche es Eltern ermöglicht zu erkennen, ob die gesetzlich vorgeschriebenen COVID-19 Selbsttest abgeschlossen sind.
+Dieses Repository hostet eine Azure Static Web App, welche es Eltern ermöglicht zu erkennen, ob die gesetzlich vorgeschriebenen COVID-19 Selbsttests abgeschlossen sind.
 Eltern können so einfach erkennen, ob die Klassen Ihrer Kinder das Testen abgeschlossen haben. Das soll Eltern mit langem Anfahrtsweg ermöglichen, Ihren Tag besser zu planen zu können.
 
 # Montessori-Schule Aufkirchen
